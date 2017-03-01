@@ -18,18 +18,18 @@ module.exports = {
         test: /\.css$/,
         loaders: [
           'style-loader',
-          'css-loader'
-        ],
-        include: __dirname + '/src'
+          'css-loader',
+          'postcss-loader'
+        ]
       },
       {
         test: /\.scss$/,
         loaders: [
           'style-loader',
           'css-loader',
+          'postcss-loader',
           'sass-loader'
-        ],
-        include: __dirname + '/src'
+        ]
       }
     ]
   }
