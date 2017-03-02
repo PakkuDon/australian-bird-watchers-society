@@ -30,6 +30,12 @@ module.exports = {
           'postcss-loader',
           'sass-loader'
         ]
+      },
+      {
+        test: /\.((png)|(jpg))$/,
+        loaders: [
+          'file-loader'
+        ]
       }
     ]
   }

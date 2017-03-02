@@ -1,5 +1,39 @@
 $base: #369;
+$accent: #363;
 
 body {
   color: $base;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+
+  .logo {
+    max-width: 200px;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    text-transform: uppercase;
+    display: flex;
+    flex: 1;
+    align-items: center;
+
+    li {
+      flex: 1;
+      text-align: center;
+    }
+  }
+}
+
+header {
+  background-image: url('/src/images/cockatoo.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 80vh;
 }
