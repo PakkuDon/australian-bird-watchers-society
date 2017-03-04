@@ -8,6 +8,13 @@ body {
 nav {
   display: flex;
   flex-direction: row;
+  position: absolute;
+  width: 100%;
+  background-color: #FFF;
+
+  &.fixed {
+    position: fixed;
+  }
 
   .logo {
     max-width: 200px;
@@ -37,5 +44,24 @@ header {
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
+}
+
+header,
+section {
   min-height: 80vh;
+}
+
+section {
+  padding-top: 3.25em;
+}
+
+.title {
+  text-transform: uppercase;
+}
+
+@media (min-width: 720px) {
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
 }
