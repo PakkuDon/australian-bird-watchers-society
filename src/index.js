@@ -1,5 +1,27 @@
 import 'normalize.css/normalize.css';
 import './stylesheets/app.scss';
+import smoothScroll from 'smoothscroll';
+
+// Enable smooth scroll
+document.querySelectorAll('[data-scroll-target]').forEach(elem => {
+  elem.addEventListener('click', e => {
+    if (e.target.matches('a')) {
+      var targetElem = document.querySelector(e.target.dataset['scrollTarget']);
+      smoothScroll(targetElem);
+    }
+  });
+});
+
+// Toggle sticky nav on scroll
+var navbar = document.querySelector('nav');
+window.addEventListener('scroll', e => {
+  if (window.scrollY > navbar.offsetTop + navbar.clientHeight) {
+    navbar.classList.add('fixed');
+  }
+  else {
+    navbar.classList.remove('fixed');
+  }
+});
 
 function initMap(mapElem) {
   var officeLocation = {
@@ -16,5 +38,7 @@ function initMap(mapElem) {
     title: 'Teamsquare'
   });
 }
+
+
 
 initMap(document.querySelector('#map'));
