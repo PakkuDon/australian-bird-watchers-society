@@ -59,9 +59,27 @@ section {
   text-transform: uppercase;
 }
 
+.row {
+  display: flex;
+  flex-direction: column;
+
+  .col {
+    flex: 1;
+  }
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+}
+
 @media (min-width: 720px) {
   .container {
     width: 80%;
     margin: 0 auto;
+  }
+
+  .row {
+    flex-direction: row;
   }
 }
