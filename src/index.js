@@ -23,6 +23,24 @@ window.addEventListener('scroll', e => {
   }
 });
 
+// Show modal on click
+var modalOverlay = document.querySelector('.modal-overlay');
+document.querySelector('button#call-to-action')
+  .addEventListener('click', e => {
+    modalOverlay.classList.add('open');
+  });
+
+modalOverlay.addEventListener('click', e => {
+  if (e.target === modalOverlay) {
+    modalOverlay.classList.remove('open');
+  }
+});
+
+document.querySelector('button.modal-close').addEventListener('click', e => {
+  modalOverlay.classList.remove('open');
+});
+
+// Initialize map
 function initMap(mapElem) {
   var officeLocation = {
     lat: -37.815341,
@@ -38,7 +56,4 @@ function initMap(mapElem) {
     title: 'Teamsquare'
   });
 }
-
-
-
 initMap(document.querySelector('#map'));

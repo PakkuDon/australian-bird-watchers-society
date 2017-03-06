@@ -20,7 +20,6 @@
         <ul>
           <li><a data-scroll-target="#about" href="#about">About</a></li>
           <li><a data-scroll-target="#faq" href="#faq">FAQ</a></li>
-          <li><a data-scroll-target="#report" href="#report">Report Sighting</a></li>
           <li><a data-scroll-target="#contact" href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -35,7 +34,7 @@
               We are currently conducting a study to track the activity
               of various bird species' across Australia
             </p>
-            <a id="call-to-action" data-scroll-target="#report" href="#report">Report Sighting</a>
+            <button id="call-to-action">Report Sighting</button>
           </div>
         </div>
       </header>
@@ -74,12 +73,6 @@
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto optio cumque qui animi, asperiores necessitatibus? Nobis pariatur, aut ex molestias ipsa dicta sapiente quam, accusamus consequuntur harum atque voluptatem consectetur?
         </div>
       </section>
-      <section id="report">
-        <div class="container">
-          <h2 class="title">Report sighting</h2>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod magni nesciunt quia vel corporis, sequi in amet quam perferendis delectus, veritatis illo doloremque, accusamus sapiente dignissimos beatae asperiores tempora nisi.
-        </div>
-      </section>
       <section id="contact">
         <div class="container">
           <h2 class="title">Contact</h2>
@@ -102,6 +95,61 @@
           </div>
         </div>
       </section>
+      <div class="modal-overlay">
+        <div id="report-sighting-form" class="modal wizard">
+          <div class="modal-header">
+            <button class="modal-close">x</button>
+          </div>
+          <div class="wizard-content">
+            <div class="wizard-page">
+              <h3 class="title">Sighting details</h3>
+              <div>
+                <label for="bird-species">Species</label>
+                <input id="bird-species" type="text">
+              </div>
+              <div>
+                <label for="sighting-location">Location</label>
+                <input id="sighting-location" type="text">
+              </div>
+              <div>
+                <label for="quantity">Number</label>
+                <input id="quantity" type="number">
+              </div>
+            </div>
+            <div class="wizard-page">
+              <h3 class="title">Personal details</h3>
+              <div>
+                <label for="name">Your name</label>
+                <input id="name" type="text">
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" type="email">
+              </div>
+              <div>
+                <label for="state">State</label>
+                <select name="state" id="state">
+                  <option value="ACT">Australian Capital Territory</option>
+                  <option value="NSW">New South Wales</option>
+                  <option value="NT">Northern Territory</option>
+                  <option value="QLD">Queensland</option>
+                  <option value="SA">South Australia</option>
+                  <option value="TAS">Tasmania</option>
+                  <option value="WA">Western Australia</option>
+                  <option value="VIC">Victoria</option>
+                </select>
+              </div>
+            </div>
+            <div class="wizard-page">
+              <h3 class="title">Thank you</h3>
+              <p>Your report has been received.</p>
+            </div>
+          </div>
+          <div class="wizard-footer">
+            <button>Next</button>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIamQbXXBDpNswS7aBs3MhPx-MApcojfA"></script>
     <script src="/dist/bundle.js"></script>
