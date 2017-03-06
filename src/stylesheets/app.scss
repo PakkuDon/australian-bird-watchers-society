@@ -1,23 +1,28 @@
-$base: #369;
-$accent: #363;
+$accent: #CF6621;
 
 body {
-  color: $base;
+  background-image: url('/src/images/robin.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 nav {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   position: absolute;
   width: 100%;
   background-color: #FFF;
+  font-family: 'Lora', 'Times New Roman';
 
   &.fixed {
     position: fixed;
+    top: 0;
   }
 
   .logo {
-    max-width: 200px;
+    width: 200px;
+    background-color: #FFF;
 
     img {
       max-width: 100%;
@@ -25,25 +30,28 @@ nav {
   }
 
   ul {
+    flex: 1;
     list-style-type: none;
     text-transform: uppercase;
-    display: flex;
-    flex: 1;
-    align-items: center;
     padding: 0;
+    margin: 0;
+    display: none;
 
     li {
-      flex: 1;
-      text-align: center;
+      display: block;
+      border-bottom: 5px solid transparent;
+      padding: 1em;
+
+      &:hover {
+        border-bottom-color: $accent;
+      }
+
+      a {
+        display: block;
+        text-decoration: none;
+      }
     }
   }
-}
-
-header {
-  background-image: url('/src/images/robin.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
 }
 
 header,
@@ -52,11 +60,25 @@ section {
 }
 
 section {
-  padding-top: 3.25em;
+  background-color: #FAFAFA;
+  padding-top: 3.5em;
+  margin-bottom: 3em;
+}
+
+a {
+  color: #111;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .title {
   text-transform: uppercase;
+  text-align: center;
+  color: $accent;
+  font-family: 'Lora', 'Times New Roman';
+  margin-bottom: 2em;
 }
 
 .row {
@@ -66,6 +88,23 @@ section {
   .col {
     flex: 1;
   }
+}
+
+#toggle-navbar {
+  display: none;
+}
+
+label[for='toggle-navbar'] {
+  cursor: pointer;
+  padding: 1em;
+}
+
+#toggle-navbar:checked ~ ul {
+  display: block;
+}
+
+label[for='toggle-navbar'] {
+  display: block;
 }
 
 #map {
@@ -81,5 +120,22 @@ section {
 
   .row {
     flex-direction: row;
+  }
+
+  label[for='toggle-navbar'] {
+    display: none;
+  }
+
+  nav {
+    flex-direction: row;
+    ul {
+      display: flex;
+      align-items: center;
+
+      li {
+        flex: 1;
+        text-align: center;
+      }
+    }
   }
 }
