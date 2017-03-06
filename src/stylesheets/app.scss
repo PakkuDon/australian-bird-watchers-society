@@ -11,6 +11,7 @@ nav {
   display: flex;
   flex-direction: column;
   position: absolute;
+  top: 0;
   width: 100%;
   background-color: #FFF;
   font-family: 'Lora', 'Times New Roman';
@@ -51,6 +52,30 @@ nav {
         text-decoration: none;
       }
     }
+  }
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+  text-align: center;
+
+  .campaign-message {
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 1em;
+  }
+
+  a {
+    color: #EEE;
+  }
+
+  #call-to-action {
+    display: inline-block;
+    padding: 1em;
+    border: 1px solid #FFF;
+    border-radius: 5px;
   }
 }
 
