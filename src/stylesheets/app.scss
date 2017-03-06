@@ -7,6 +7,10 @@ body {
   background-position: center;
 }
 
+img {
+  max-width: 100%;
+}
+
 nav {
   display: flex;
   flex-direction: column;
@@ -24,10 +28,6 @@ nav {
   .logo {
     width: 200px;
     background-color: #FFF;
-
-    img {
-      max-width: 100%;
-    }
   }
 
   ul {
@@ -113,6 +113,7 @@ a {
 
   .col {
     flex: 1;
+    padding: 1em;
   }
 }
 
