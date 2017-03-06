@@ -25,20 +25,38 @@ window.addEventListener('scroll', e => {
 
 // Show modal on click
 var modalOverlay = document.querySelector('.modal-overlay');
+var wizardPages = Array.from(document.querySelectorAll('.wizard-page'));
 document.querySelector('button#call-to-action')
   .addEventListener('click', e => {
     modalOverlay.classList.add('open');
+    wizardPages[0].classList.add('active');
   });
 
+// Hide modal
 modalOverlay.addEventListener('click', e => {
   if (e.target === modalOverlay) {
     modalOverlay.classList.remove('open');
+    document.querySelector('.wizard-page.active').classList.remove('active');
   }
 });
 
 document.querySelector('button.modal-close').addEventListener('click', e => {
   modalOverlay.classList.remove('open');
+  document.querySelector('.wizard-page.active').classList.remove('active');
 });
+
+// Move to next page or close
+document.querySelector('button.wizard-next').addEventListener('click', e => {
+  var index = wizardPages.indexOf(document.querySelector('.wizard-page.active'));
+  wizardPages[index].classList.remove('active');
+  if (index < wizardPages.length - 1) {
+    wizardPages[index + 1].classList.add('active');
+  }
+  else {
+    modalOverlay.classList.remove('open');
+  }
+});
+
 
 // Initialize map
 function initMap(mapElem) {

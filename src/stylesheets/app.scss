@@ -189,6 +189,14 @@ a {
   input {
     display: block;
   }
+
+  .wizard-page {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
 }
 
 @media (min-width: 720px) {
