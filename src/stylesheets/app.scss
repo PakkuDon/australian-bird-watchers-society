@@ -1,6 +1,7 @@
 $accent: #CF6621;
 
 body {
+  background-color: darken($accent, 20);
   background-image: url('./../images/robin.jpg');
   background-size: cover;
   background-attachment: fixed;
